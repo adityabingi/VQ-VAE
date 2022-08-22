@@ -147,6 +147,7 @@ def main():
     writer = SummaryWriter(logdir)
     sample_imgs, _ = next(iter(val_data))
     grid = make_grid(sample_imgs, nrow=8, range=(-1, 1), normalize=True)
+    save_image(grid, os.path.join(logdir, 'original.jpg'))
     writer.add_image('original', grid, 0)
 
     if args.train:
